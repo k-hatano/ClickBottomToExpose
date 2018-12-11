@@ -22,7 +22,6 @@
 		4A7D467521BF72DC000E2398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		4A7D467721BF72DC000E2398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A7D467821BF72DC000E2398 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4A7D467A21BF72DC000E2398 /* ClickBottomToExpose_.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClickBottomToExpose_.entitlements; sourceTree = "<group>"; };
 		4A7D468021BF77C7000E2398 /* ClickBottomToExposeWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClickBottomToExposeWindow.h; sourceTree = "<group>"; };
 		4A7D468121BF77C7000E2398 /* ClickBottomToExposeWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClickBottomToExposeWindow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,7 +62,6 @@
 				4A7D467421BF72DC000E2398 /* MainMenu.xib */,
 				4A7D467721BF72DC000E2398 /* Info.plist */,
 				4A7D467821BF72DC000E2398 /* main.m */,
-				4A7D467A21BF72DC000E2398 /* ClickBottomToExpose_.entitlements */,
 				4A7D468021BF77C7000E2398 /* ClickBottomToExposeWindow.h */,
 				4A7D468121BF77C7000E2398 /* ClickBottomToExposeWindow.m */,
 			);
@@ -271,7 +269,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "ClickBottomToExposé/ClickBottomToExpose_.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "ClickBottomToExposé/Info.plist";
@@ -288,7 +286,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "ClickBottomToExposé/ClickBottomToExpose_.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "ClickBottomToExposé/Info.plist";
