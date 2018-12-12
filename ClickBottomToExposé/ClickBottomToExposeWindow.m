@@ -32,10 +32,17 @@
 - (void)mouseDown:(NSEvent *)theEvent {
     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.3 repeats:NO block:^(NSTimer * _Nonnull timer) {
         if (self.isMousePressed) {
+            [self setBackgroundColor:[NSColor colorWithCalibratedWhite:0.0 alpha:0.0]];
             NSArray<NSRunningApplication *> *applications = [[NSWorkspace sharedWorkspace] runningApplications];
             for (NSRunningApplication *app in applications) {
                 if (app.ownsMenuBar) {
                     [app activateWithOptions:NSApplicationActivateIgnoringOtherApps];
+                    for (NSInteger loopingCount = 0; loopingCount < 10; loopingCount++) {
+                        if (app.isActive) {
+                            break;
+                        }
+                        [NSThread sleepForTimeInterval:0.01];
+                    }
                     break;
                 }
             }
