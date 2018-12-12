@@ -34,7 +34,7 @@
         if (self.isMousePressed) {
             NSArray<NSRunningApplication *> *applications = [[NSWorkspace sharedWorkspace] runningApplications];
             for (NSRunningApplication *app in applications) {
-                if ([app ownsMenuBar]) {
+                if (app.ownsMenuBar) {
                     [app activateWithOptions:NSApplicationActivateIgnoringOtherApps];
                     break;
                 }
@@ -67,12 +67,10 @@
 {
     self.totalScroll += theEvent.deltaY;
     if (self.totalScroll < -4) {
-        [ClickBottomToExposeWindow showMissionControl];
-        self.totalScroll = 0;
+        [self setBackgroundColor:[NSColor colorWithCalibratedWhite:0.0 alpha:0.0]];
     }
     if (self.totalScroll > 4) {
-        [ClickBottomToExposeWindow showApplicationWindows];
-        self.totalScroll = 0;
+        [self setBackgroundColor:[NSColor colorWithCalibratedWhite:0.0 alpha:0.0]];
     }
 }
 
