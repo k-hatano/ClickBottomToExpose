@@ -693,6 +693,8 @@
                 </connections>
             </view>
             <connections>
+                <outlet property="appNameField" destination="reB-Xj-UJf" id="4H7-ur-o5b"/>
+                <outlet property="appNameWindow" destination="v44-2Y-jIi" id="hVq-VX-Eql"/>
                 <outlet property="delegate" destination="Voe-Tx-rLC" id="g5N-cn-JdC"/>
             </connections>
             <point key="canvasLocation" x="48" y="48"/>
@@ -727,5 +729,27 @@
             </items>
             <point key="canvasLocation" x="-97" y="280"/>
         </menu>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="" animationBehavior="default" id="v44-2Y-jIi">
+            <windowStyleMask key="styleMask" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowCollectionBehavior key="collectionBehavior" stationary="YES"/>
+            <rect key="contentRect" x="196" y="207" width="548" height="44"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <view key="contentView" id="KAG-o7-N56">
+                <rect key="frame" x="0.0" y="0.0" width="548" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="reB-Xj-UJf">
+                        <rect key="frame" x="18" y="7" width="512" height="29"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" usesSingleLineMode="YES" id="EB5-Fe-jaN">
+                            <font key="font" metaFont="system" size="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="-6" y="-218"/>
+        </window>
     </objects>
 </document>
