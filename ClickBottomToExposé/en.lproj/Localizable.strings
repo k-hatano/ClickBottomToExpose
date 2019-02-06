@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  ClickBottomToExposé
+
+  Created by HatanoKenta on 2019/02/06.
+  
+*/
+
+"hide" = "Hide %@";
+"quit" = "Quit %@";

@@ -694,13 +694,32 @@
             </view>
             <connections>
                 <outlet property="appNameField" destination="reB-Xj-UJf" id="4H7-ur-o5b"/>
+                <outlet property="appNameMenuItem" destination="gE3-ZE-3cL" id="WGW-MI-iA2"/>
                 <outlet property="appNameWindow" destination="v44-2Y-jIi" id="hVq-VX-Eql"/>
                 <outlet property="delegate" destination="Voe-Tx-rLC" id="g5N-cn-JdC"/>
+                <outlet property="hideMenuItem" destination="y7N-Lu-8aM" id="6dL-Ul-hyh"/>
+                <outlet property="quitMenuItem" destination="LlQ-hu-NC3" id="Jqw-xr-e5K"/>
             </connections>
             <point key="canvasLocation" x="48" y="48"/>
         </window>
         <menu id="2XZ-qC-Fpe">
             <items>
+                <menuItem title="App" enabled="NO" id="gE3-ZE-3cL">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Hide" id="y7N-Lu-8aM">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="hideThisApp:" target="QvC-M9-y7g" id="ZKt-3F-ysg"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Quit" id="LlQ-hu-NC3">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="quitThisApp:" target="QvC-M9-y7g" id="WZ3-Pq-pHk"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="s8B-uc-nBU"/>
                 <menuItem title="Mission Control" id="pOr-1t-cqA">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>

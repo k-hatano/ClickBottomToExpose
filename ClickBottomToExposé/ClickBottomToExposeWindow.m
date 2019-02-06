@@ -7,7 +7,13 @@
 
 #import "ClickBottomToExposeWindow.h"
 
+#define SMALL_ICON_WIDTH 19
+
 @interface ClickBottomToExposeWindow ()
+
+@property (weak) IBOutlet NSMenuItem *appNameMenuItem;
+@property (weak) IBOutlet NSMenuItem *hideMenuItem;
+@property (weak) IBOutlet NSMenuItem *quitMenuItem;
 
 @property (weak) IBOutlet NSWindow *appNameWindow;
 @property (weak) IBOutlet NSTextField *appNameField;
@@ -37,6 +43,21 @@
     [self.contentView addTrackingArea:area];
     
     self.isMousePressed = NO;
+    
+    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(applicationDidActive:) name:NSWorkspaceDidActivateApplicationNotification object:nil];
+}
+
+- (void)applicationDidActive:(NSNotification *)notification
+{
+    NSArray<NSRunningApplication *> *applications = [[NSWorkspace sharedWorkspace] runningApplications];
+    for (NSRunningApplication *app in applications) {
+        if (app.ownsMenuBar) {
+            [self.appNameMenuItem setTitle:[app localizedName]];
+            [self.appNameMenuItem setImage:[ClickBottomToExposeWindow resizeImage:app.icon small:YES]];
+            [self.hideMenuItem setTitle:[NSString stringWithFormat:NSLocalizedString(@"hide", nil), [app localizedName]]];
+            [self.quitMenuItem setTitle:[NSString stringWithFormat:NSLocalizedString(@"quit", nil), [app localizedName]]];
+        }
+    }
 }
 
 - (void)appNameShowing:(NSTimer *)timer {
@@ -142,6 +163,45 @@
     task.launchPath = @"/usr/bin/open";
     task.arguments = @[@"-a", @"mission control", @"--args", @"1"];
     [task launch];
+}
+
+- (IBAction)hideThisApp:(id)sender {
+    NSArray<NSRunningApplication *> *applications = [[NSWorkspace sharedWorkspace] runningApplications];
+    for (NSRunningApplication *app in applications) {
+        if (app.ownsMenuBar) {
+            [app hide];
+        }
+    }
+}
+
+- (IBAction)quitThisApp:(id)sender {
+    NSArray<NSRunningApplication *> *applications = [[NSWorkspace sharedWorkspace] runningApplications];
+    for (NSRunningApplication *app in applications) {
+        if (app.ownsMenuBar) {
+            [app terminate];
+        }
+    }
+}
+
++ (NSImage *)resizeImage:(NSImage *)image small:(BOOL)small {
+    NSImage *resultImage = [image copy];
+    NSImage *tmpImage;
+    
+    if (small) {
+        tmpImage = [[NSImage alloc] initWithSize:NSMakeSize(SMALL_ICON_WIDTH, SMALL_ICON_WIDTH)];
+    } else {
+        tmpImage = [[NSImage alloc] initWithSize:NSMakeSize(image.size.width, image.size.height)];
+    }
+    
+    [tmpImage lockFocus];
+    [resultImage drawInRect:NSMakeRect(0, 0, tmpImage.size.width, tmpImage.size.height)
+                   fromRect:NSMakeRect(0, 0, resultImage.size.width, resultImage.size.height)
+                  operation:NSCompositeSourceOver
+                   fraction:1.0f];
+    [tmpImage unlockFocus];
+    resultImage = tmpImage;
+    
+    return resultImage;
 }
 
 @end

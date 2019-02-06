@@ -12,6 +12,7 @@
 		4A7D467621BF72DC000E2398 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A7D467421BF72DC000E2398 /* MainMenu.xib */; };
 		4A7D467921BF72DC000E2398 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7D467821BF72DC000E2398 /* main.m */; };
 		4A7D468221BF77C7000E2398 /* ClickBottomToExposeWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7D468121BF77C7000E2398 /* ClickBottomToExposeWindow.m */; };
+		4A7DED15220AEDA100B75A1A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A7DED17220AEDA100B75A1A /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4A7D467821BF72DC000E2398 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4A7D468021BF77C7000E2398 /* ClickBottomToExposeWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClickBottomToExposeWindow.h; sourceTree = "<group>"; };
 		4A7D468121BF77C7000E2398 /* ClickBottomToExposeWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClickBottomToExposeWindow.m; sourceTree = "<group>"; };
+		4A7DED16220AEDA100B75A1A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				4A7D467821BF72DC000E2398 /* main.m */,
 				4A7D468021BF77C7000E2398 /* ClickBottomToExposeWindow.h */,
 				4A7D468121BF77C7000E2398 /* ClickBottomToExposeWindow.m */,
+				4A7DED17220AEDA100B75A1A /* Localizable.strings */,
 			);
 			path = "ClickBottomToExposé";
 			sourceTree = "<group>";
@@ -125,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A7D467321BF72DC000E2398 /* Assets.xcassets in Resources */,
+				4A7DED15220AEDA100B75A1A /* Localizable.strings in Resources */,
 				4A7D467621BF72DC000E2398 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +155,14 @@
 				4A7D467521BF72DC000E2398 /* Base */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		4A7DED17220AEDA100B75A1A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A7DED16220AEDA100B75A1A /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
