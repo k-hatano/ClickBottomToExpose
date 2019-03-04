@@ -9,6 +9,7 @@
 
 @interface ClickBottomToExposeWindow : NSWindow <NSWindowDelegate>
 
+- (void)bottomBarShowing:(NSTimer *)timer;
 - (void)appNameShowing:(NSTimer *)timer;
 
 + (void)showMissionControl;

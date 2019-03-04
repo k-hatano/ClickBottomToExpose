@@ -18,6 +18,7 @@
 @property (weak) IBOutlet NSWindow *appNameWindow;
 @property (weak) IBOutlet NSTextField *appNameField;
 
+@property (strong) NSTimer *bottomBarShowingTimer;
 @property (strong) NSTimer *mousePressTimer;
 @property (strong) NSTimer *appNameShowingTimer;
 @property (assign) BOOL isMousePressed;
@@ -126,11 +127,21 @@
 }
 
 - (void)mouseEntered:(NSEvent *)theEvent {
-    [self setBackgroundColor:[NSColor colorWithCalibratedWhite:0.0 alpha:0.5]];
+    self.bottomBarShowingTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(bottomBarShowing:) userInfo:nil repeats:NO];
 }
 
 - (void)mouseExited:(NSEvent *)theEvent {
     [self setBackgroundColor:[NSColor colorWithCalibratedWhite:0.0 alpha:0.0]];
+    if (self.bottomBarShowingTimer && [self.bottomBarShowingTimer isValid]) {
+        [self.bottomBarShowingTimer invalidate];
+        self.bottomBarShowingTimer = nil;
+    }
+}
+
+- (void)bottomBarShowing:(NSTimer *)timer {
+    [self setBackgroundColor:[NSColor colorWithCalibratedWhite:0.0 alpha:0.5]];
+    [self.bottomBarShowingTimer invalidate];
+    self.bottomBarShowingTimer = nil;
 }
 
 - (void)scrollWheel:(NSEvent *)theEvent
